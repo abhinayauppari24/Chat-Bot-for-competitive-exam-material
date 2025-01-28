@@ -1,0 +1,68 @@
+header{
+   padding: 20px;
+   background-color: rgb(66, 64, 64);
+   display: flex;
+   align-items: flex-end;
+   
+}
+header img{
+    
+    width: 180px;
+    height: 150px;
+    margin-right: 30px;/* Adds space between the logo and navigation */
+}
+nav{
+    
+    bottom: 10px;
+    right: 20px;
+    display: flex;
+    
+}
+nav a{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    margin-left: 20px;
+    
+}
+
+.link-box {
+   background-color:rgb(85, 85, 86); /* Box background */
+   padding: 10px;
+   border-radius: 5px;
+   margin-right: 25px;
+   
+}
+
+.link-box a {
+   color: white; /* Ensures text color is white */
+   font-size: 18px;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
