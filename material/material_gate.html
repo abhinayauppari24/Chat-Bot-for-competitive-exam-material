@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Science Topics</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            overflow-x: hidden;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #f4f4f4;
+            padding: 20px;
+            box-sizing: border-box;
+            height: 100vh;
+            position: fixed;
+            overflow-y: auto;
+        }
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sidebar .box {
+            background-color: #e0e0e0;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .sidebar .box:hover {
+            background-color: #ccc;
+        }
+        .sidebar .box ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .sidebar .box ul li {
+            padding: 5px 0;
+            cursor: pointer;
+        }
+        .sidebar .box ul li:hover {
+            background-color: #ddd;
+        }
+        .content {
+            margin-left: 270px;
+            padding: 20px;
+            width: calc(100% - 270px);
+            height: 100vh;
+            overflow-y: scroll;
+        }
+        .content-section {
+            display: none;
+        }
+        .content-section.active {
+            display: block;
+        }
+        .content-section h3 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Topics</h2>
+        <div class="box">
+            <strong>Engineering Mathematics</strong>
+            <ul>
+                <li data-target="calc">Calculus</li>
+                <li data-target="linear-algebra">Linear Algebra</li>
+                <li data-target="prob-stat">Probability and Statistics</li>
+            </ul>
+        </div>
+        <div class="box">
+            <strong>Discrete Mathematics</strong>
+            <ul>
+                <li data-target="set-theory">Set Theory</li>
+                <li data-target="graph-theory">Graph Theory</li>
+                <li data-target="combinatorics">Combinatorics</li>
+            </ul>
+        </div>
+        <div class="box">
+            <strong>Digital Logic</strong>
+            <ul>
+                <li data-target="boolean-algebra">Boolean Algebra</li>
+                <li data-target="logic-gates">Logic Gates</li>
+                <li data-target="combinational-circuits">Combinational Circuits</li>
+            </ul>
+        </div>
+        <div class="box">
+            <strong>Computer Organization and Architecture</strong>
+            <ul>
+                <li data-target="cpu-design">CPU Design</li>
+                <li data-target="memory-hierarchy">Memory Hierarchy</li>
+                <li data-target="instruction-set">Instruction Set Architecture</li>
+            </ul>
+        </div>
+        <div class="box">
+            <strong>Programming and Data Structure</strong>
+            <ul>
+                <li data-target="data-types">Data Types</li>
+                <li data-target="arrays-linked-lists">Arrays and Linked Lists</li>
+                <li data-target="stacks-queues">Stacks and Queues</li>
+            </ul>
+        </div>
+        <div class="box">
+            <strong>Algorithms</strong>
+            <ul>
+                <li data-target="sorting-algorithms">Sorting Algorithms</li>
+                <li data-target="graph-algorithms">Graph Algorithms</li>
+                <li data-target="dynamic-programming">Dynamic Programming</li>
+            </ul>
+        </div>
+        <div class="box">
+            <strong>Theory of Computation</strong>
+            <ul>
+                <li data-target="finite-automata">Finite Automata</li>
+                <li data-target="context-free-grammars">Context-Free Grammars</li>
+                <li data-target="decidability">Decidability</li>
+            </ul>
+        </div>
+        <div class="box">
+            <strong>Compiler Design</strong>
+            <ul>
+                <li data-target="lexical-analysis">Lexical Analysis</li>
+                <li data-target="syntax-analysis">Syntax Analysis</li>
+                <li data-target="code-optimization">Code Optimization</li>
+            </ul>
+        </div>
+        <div class="box">
+            <strong>Operating System</strong>
+            <ul>
+                <li data-target="process-management">Process Management</li>
+                <li data-target="memory-management">Memory Management</li>
+                <li data-target="file-systems">File Systems</li>
+            </ul>
+        </div>
+        <div class="box">
+            <strong>Databases</strong>
+            <ul>
+                <li data-target="relational-databases">Relational Databases</li>
+                <li data-target="normalization">Normalization</li>
+                <li data-target="sql-queries">SQL Queries</li>
+            </ul>
+        </div>
+        <div class="box">
+            <strong>Computer Networks</strong>
+            <ul>
+                <li data-target="network-protocols">Network Protocols</li>
+                <li data-target="data-communication">Data Communication</li>
+                <li data-target="network-security">Network Security</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="content">
+        <div id="calc" class="content-section">
+            <h3>Calculus</h3>
+            <p>Calculus is a fundamental branch of mathematics that deals with the study of continuous change. It is divided into two primary areas: differential calculus and integral calculus.
+
+                Differential Calculus
+                
+                Differential calculus focuses on the concept of a derivative, which represents the rate at which a quantity changes. It is concerned with instantaneous rates of change and the slopes of curves. The derivative of a function at a specific point provides the slope of the tangent line to the function's graph at that point, indicating how the function's value changes with an infinitesimal change in the input.
+                
+                Integral Calculus
+                
+                Integral calculus, on the other hand, deals with the concept of an integral, which represents the accumulation of quantities. It is concerned with finding areas under curves, volumes of solids of revolution, and other related concepts. The integral of a function over an interval gives the total accumulation of the quantity described by the function over that interval.
+                
+                Fundamental Theorem of Calculus
+                
+                The Fundamental Theorem of Calculus establishes a connection between differentiation and integration, stating that differentiation and integration are inverse operations. It provides a way to compute definite integrals by finding antiderivatives and is a cornerstone of calculus.
+                
+                Applications of Calculus
+                
+                Calculus has a wide range of applications across various fields:
+                
+                Physics: Calculus is essential in physics for modeling and analyzing physical phenomena such as motion, electricity, heat, light, and mechanics. For example, Newton's second law of motion, which states that the net force on an object equals its mass times its acceleration, is expressed using calculus. 
+                EN.WIKIPEDIA.ORG
+                
+                Engineering: In engineering, calculus is used to model and analyze systems and processes, including fluid dynamics, thermodynamics, and structural analysis. It allows engineers to optimize designs and predict system behaviors under various conditions.
+                
+                Economics: Calculus is used in economics to model and analyze economic systems, including optimization problems such as maximizing profit or minimizing cost. It provides tools for understanding how economic variables change in response to different factors.
+                
+                Biology: In biology, calculus is used to model population dynamics, the spread of diseases, and other biological processes that change over time. It helps in understanding how biological systems evolve and respond to various factors.
+
+            </p>
+        </div>
+        <div id="linear-algebra" class="content-section">
+            <h3>Linear Algebra</h3>
+            <p>Linear Algebra is the branch of mathematics concerning linear equations, linear functions, and their representations through matrices and vector spaces...</p>
+        </div>
+        <div id="prob-stat" class="content-section">
+            <h3>Probability and Statistics</h3>
+            <p>Probability and Statistics involve analyzing random events and interpreting data, providing insights through statistical models...</p>
+        </div>
+        <div id="set-theory" class="content-section">
+            <h3>Set Theory</h3>
+            <p>Set Theory is a fundamental branch of mathematics that deals with sets, which are collections of objects. It is used to understand the concept of numbers...</p>
+        </div>
+        <div id="graph-theory" class="content-section">
+            <h3>Graph Theory</h3>
+            <p>Graph Theory studies graphs, which are mathematical structures used to model pairwise relations between objects. It has applications in computer science...</p>
+        </div>
+        <div id="combinatorics" class="content-section">
+            <h3>Combinatorics</h3>
+            <p>Combinatorics is the field of mathematics that studies the counting, arrangement, and combination of objects...</p>
+        </div>
+        <!-- Add content sections for other subtopics -->
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const subtopics = document.querySelectorAll('.sidebar .box ul li');
+            const contentSections = document.querySelectorAll('.content-section');
+
+            subtopics.forEach(subtopic => {
+                subtopic.addEventListener('click', (e) => {
+                    const contentId = e.target.getAttribute('data-target');
+                    contentSections.forEach(section => {
+                        section.classList.remove('active');
+                        if (section.id === contentId) {
+                            section.classList.add('active');
+                        }
+                    });
+                });
+            });
+
+            // Scroll event to dynamically highlight the topic in the sidebar
+            window.addEventListener('scroll', () => {
+                const scrollPosition = window.scrollY + window.innerHeight / 2;
+                contentSections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionBottom = sectionTop + section.offsetHeight;
+
+                    if (scrollPosition >= sectionTop && scrollPosition <= sectionBottom) {
+                        const target = document.querySelector(`li[data-target='${section.id}']`);
+                        if (target) {
+                            target.style.fontWeight = 'bold';
+                        }
+                    } else {
+                        const target = document.querySelector(`li[data-target='${section.id}']`);
+                        if (target) {
+                            target.style.fontWeight = 'normal';
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+C:\VS Code Programs\html programs\mini-project\material
