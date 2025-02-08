@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRE Topics</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            overflow-x: hidden;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #f4f4f4;
+            padding: 20px;
+            box-sizing: border-box;
+            height: 100vh;
+            position: fixed;
+            overflow-y: auto;
+        }
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sidebar .box {
+            background-color: #e0e0e0;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .sidebar .box:hover {
+            background-color: #ccc;
+        }
+        .sidebar .box ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .sidebar .box ul li {
+            padding: 5px 0;
+            cursor: pointer;
+        }
+        .sidebar .box ul li:hover {
+            background-color: #ddd;
+        }
+        .content {
+            margin-left: 270px;
+            padding: 20px;
+            width: calc(100% - 270px);
+            height: 100vh;
+            overflow-y: scroll;
+        }
+        .content-section {
+            display: none;
+        }
+        .content-section.active {
+            display: block;
+        }
+        .content-section h3 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>GRE Topics</h2>
+        <div class="box">
+            <strong>Verbal Reasoning</strong>
+            <ul>
+                <li data-target="reading-comprehension">Reading Comprehension</li>
+                <li data-target="text-completion">Text Completion</li>
+                <li data-target="sentence-equivalence">Sentence Equivalence</li>
+            </ul>
+        </div>
+        <div class="box">
+            <strong>Quantitative Reasoning</strong>
+            <ul>
+                <li data-target="algebra">Algebra</li>
+                <li data-target="geometry">Geometry</li>
+                <li data-target="data-analysis">Data Analysis</li>
+            </ul>
+        </div>
+        <div class="box">
+            <strong>Analytical Writing</strong>
+            <ul>
+                <li data-target="issue-task">Issue Task</li>
+                <li data-target="argument-task">Argument Task</li>
+            </ul>
+        </div>
+        
+    </div>
+
+    <div class="content">
+        <div id="reading-comprehension" class="content-section">
+            <h3>Reading Comprehension</h3>
+            <p>Reading comprehension measures your ability to understand and analyze written material...</p>
+        </div>
+        <div id="text-completion" class="content-section">
+            <h3>Text Completion</h3>
+            <p>Text completion tests your ability to understand the context and logically complete sentences...</p>
+        </div>
+        <div id="sentence-equivalence" class="content-section">
+            <h3>Sentence Equivalence</h3>
+            <p>Sentence equivalence requires choosing two options that complete a sentence in a way that maintains meaning...</p>
+        </div>
+        <div id="algebra" class="content-section">
+            <h3>Algebra</h3>
+            <p>Algebra includes concepts such as equations, inequalities, and functions...</p>
+        </div>
+        <div id="geometry" class="content-section">
+            <h3>Geometry</h3>
+            <p>Geometry involves properties and relationships of geometric figures...</p>
+        </div>
+        <div id="data-analysis" class="content-section">
+            <h3>Data Analysis</h3>
+            <p>Data analysis covers statistics, probability, and interpretation of data...</p>
+        </div>
+        <div id="issue-task" class="content-section">
+            <h3>Issue Task</h3>
+            <p>The Issue Task requires you to construct a well-reasoned argument on a given topic...</p>
+        </div>
+        <div id="argument-task" class="content-section">
+            <h3>Argument Task</h3>
+            <p>The Argument Task requires you to analyze the logical structure of an argument...</p>
+        </div>
+        
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const subtopics = document.querySelectorAll('.sidebar .box ul li');
+            const contentSections = document.querySelectorAll('.content-section');
+
+            subtopics.forEach(subtopic => {
+                subtopic.addEventListener('click', (e) => {
+                    const contentId = e.target.getAttribute('data-target');
+                    contentSections.forEach(section => {
+                        section.classList.remove('active');
+                        if (section.id === contentId) {
+                            section.classList.add('active');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

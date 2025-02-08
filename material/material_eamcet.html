@@ -3,15 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EAMCET</title>
-    <link rel="stylesheet" href="material.css">
+    <title>Study Topics</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            overflow-x: hidden;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #f4f4f4;
+            padding: 20px;
+            box-sizing: border-box;
+            height: 100vh;
+            position: fixed;
+            overflow-y: auto;
+        }
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sidebar .box {
+            background-color: #e0e0e0;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .sidebar .box:hover {
+            background-color: #ccc;
+        }
+        .sidebar .box ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .sidebar .box ul li {
+            padding: 5px 0;
+            cursor: pointer;
+        }
+        .sidebar .box ul li:hover {
+            background-color: #ddd;
+        }
+        .content {
+            margin-left: 270px;
+            padding: 20px;
+            width: calc(100% - 270px);
+            height: 100vh;
+            overflow-y: scroll;
+        }
+        .content-section {
+            display: none;
+        }
+        .content-section.active {
+            display: block;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div>
-            
+    <div class="sidebar">
+        <h2>Subjects</h2>
+        <div class="box">
+            <strong>Physics</strong>
+            <ul>
+                <li data-target="mechanics">Mechanics</li>
+                <li data-target="thermodynamics">Thermodynamics</li>
+                <li data-target="electromagnetism">Electromagnetism</li>
+            </ul>
         </div>
-    </header>
+        <div class="box">
+            <strong>Chemistry</strong>
+            <ul>
+                <li data-target="organic-chemistry">Organic Chemistry</li>
+                <li data-target="inorganic-chemistry">Inorganic Chemistry</li>
+                <li data-target="physical-chemistry">Physical Chemistry</li>
+            </ul>
+        </div>
+        <div class="box">
+            <strong>Mathematics</strong>
+            <ul>
+                <li data-target="calculus">Calculus</li>
+                <li data-target="linear-algebra">Linear Algebra</li>
+                <li data-target="probability">Probability & Statistics</li>
+            </ul>
+        </div>
+    </div>
     
+    <div class="content">
+        <div id="mechanics" class="content-section">
+            <h3>Mechanics</h3>
+            <p>Mechanics deals with motion, forces, and energy...</p>
+        </div>
+        <div id="thermodynamics" class="content-section">
+            <h3>Thermodynamics</h3>
+            <p>Thermodynamics explores heat transfer, energy conservation, and entropy...</p>
+        </div>
+        <div id="electromagnetism" class="content-section">
+            <h3>Electromagnetism</h3>
+            <p>Electromagnetism studies electric and magnetic fields and their interactions...</p>
+        </div>
+        <div id="organic-chemistry" class="content-section">
+            <h3>Organic Chemistry</h3>
+            <p>Organic Chemistry focuses on carbon-containing compounds and their reactions...</p>
+        </div>
+        <div id="inorganic-chemistry" class="content-section">
+            <h3>Inorganic Chemistry</h3>
+            <p>Inorganic Chemistry deals with metals, minerals, and non-organic compounds...</p>
+        </div>
+        <div id="physical-chemistry" class="content-section">
+            <h3>Physical Chemistry</h3>
+            <p>Physical Chemistry combines physics and chemistry principles to study molecular behavior...</p>
+        </div>
+        <div id="calculus" class="content-section">
+            <h3>Calculus</h3>
+            <p>Calculus studies changes and is divided into differential and integral calculus...</p>
+        </div>
+        <div id="linear-algebra" class="content-section">
+            <h3>Linear Algebra</h3>
+            <p>Linear Algebra focuses on vector spaces, matrices, and linear transformations...</p>
+        </div>
+        <div id="probability" class="content-section">
+            <h3>Probability & Statistics</h3>
+            <p>Probability and Statistics analyze uncertainty and data interpretation...</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const subtopics = document.querySelectorAll('.sidebar .box ul li');
+            const contentSections = document.querySelectorAll('.content-section');
+
+            subtopics.forEach(subtopic => {
+                subtopic.addEventListener('click', (e) => {
+                    const contentId = e.target.getAttribute('data-target');
+                    contentSections.forEach(section => {
+                        section.classList.remove('active');
+                        if (section.id === contentId) {
+                            section.classList.add('active');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>
